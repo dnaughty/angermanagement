@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @incident.kind %>
+</p>
+
+<p>
+  <strong>Moodprev:</strong>
+  <%= @incident.moodprev %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @incident.location %>
+</p>
+
+<p>
+  <strong>Specloc:</strong>
+  <%= @incident.specloc %>
+</p>
+
+<%= @incident.created_at %>
+
+<%= link_to 'Edit', edit_incident_path(@incident) %> |
+<%= link_to 'Back', incidents_path %>

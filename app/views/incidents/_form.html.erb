@@ -1,0 +1,49 @@
+                <%= form_with(model: incident, local: true) do |form| %>
+                  <% if incident.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(incident.errors.count, "error") %> prohibited this incident from being saved:</h2>
+
+                      <ul>
+                        <% incident.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  <% end %>
+
+
+                    <div class="field">
+                      <%= form.label :kind %>
+                      <%= form.text_field :kind %>
+                    </div>
+
+                    <% if action_name == "edit" %>
+                        <div class="field">
+                          <%= form.label :moodprev %>
+                          <%= form.text_field :moodprev %>
+                        </div>
+
+                        <div class="field">
+                          <%= form.label :location %>
+                          <%= form.text_field :location %>
+                        </div>
+
+                        <div class="field">
+                          <%= form.label :specloc %>
+                          <%= form.text_field :specloc %>
+                        </div>
+                    <% end %>
+
+
+                      
+                     
+                      
+                    
+                    <%= form.submit :class => 'btn btn-primary btn-circle btn-xl'%>
+
+                     
+                   <% end %>
+                       
+                     
+
+
