@@ -13,32 +13,29 @@
 
 
                     <div class="field">
-                      <%= form.label :kind %>
+                      <%= form.label :type %> (Anger, Depression, etc..) <br>
                       <%= form.text_field :kind %>
                     </div>
+                   
 
                     <% if action_name == "edit" %>
                         <div class="field">
-                          <%= form.label :moodprev %>
+                          <%= form.label :Mood_when_incident_occurred %><br>
                           <%= form.text_field :moodprev %>
                         </div>
-
                         <div class="field">
-                          <%= form.label :location %>
+                          <%= form.label :location %><br>
                           <%= form.text_field :location %>
                         </div>
 
                         <div class="field">
-                          <%= form.label :specloc %>
+                          <%= form.label :Specific_location %><br>
                           <%= form.text_field :specloc %>
                         </div>
                     <% end %>
 
-
-                      
-                     
-                      
-                    
+                    <br>
+  
                     <%= form.submit :class => 'btn btn-danger btn-circle btn-xl'%>
 
                      
