@@ -2,32 +2,31 @@
 
 <h1>Incidents</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Kind</th>
-      <th>Moodprev</th>
-      <th>Location</th>
-      <th>Specloc</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @incidents.each do |incident| %>
-      <tr>
-        <td><%= incident.kind %></td>
-        <td><%= incident.moodprev %></td>
-        <td><%= incident.location %></td>
-        <td><%= incident.specloc %></td>
-        <td><%= link_to 'Show', incident %></td>
-        <td><%= link_to 'Edit', edit_incident_path(incident) %></td>
-        <td><%= link_to 'Destroy', incident, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
 
 <%= link_to 'New Incident', new_incident_path %>
+
+<div class="row row-cols-sm-6 row-cols-md-5 ">
+  
+
+ <% @incidents.each do |incident| %>
+     <div class="card">
+       <div class="card-header"> <%= incident.kind %> </div>
+      <ul class="list-group-group-flush">
+             <li class="list-group-item"><%= incident.created_at %></li>
+            <li class="list-group-item"><%= incident.location %> <%= incident.specloc %></li> 
+            <li class="list-group-item"><%= link_to 'Show', incident %> <%= link_to 'Edit', edit_incident_path(incident) %></li> 
+            <li class="list-group-item"><%= link_to 'Destroy', incident, method: :delete, data: { confirm: 'Are you sure?' } %></li> 
+            <li class="list-group-item"><%= link_to 'Journal', new_incident_journal_path(incident) %></li> 
+              
+    </ul>
+             
+          
+     </div>
+             
+      
+  <% end %>
+  </div>
+</div>
+
+

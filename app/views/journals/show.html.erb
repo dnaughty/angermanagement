@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @journal.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @journal.content %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_journal_path(@journal) %> |
+<%= link_to 'Back', incident_journals_path(@journal) %>
